@@ -65,25 +65,6 @@ body {
   background-color: #4CAF50;
 }
 
-.column {
-  float: left;
-  padding: 1em;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.sidemenu {
-  width: 25%;
-}
-
-.content {
-  width: 75%;
-}
-
 #jolecule-embed {
     width: 100%;
     height: 500px;
@@ -109,6 +90,8 @@ body {
 
 
 <!-- 
+ This didn't work: Molmil interferes with other viewers if it is embedded in this way.
+ 
  <script>
       var molmil_settings = {src: "http://gjbekker.github.io/molmil/"}, canvas;
   
@@ -126,9 +109,6 @@ body {
 
 </head>
 
-<!-- 
-<body onload="initViewer();">
- -->
 <body">
 
 <ul class="topmenu">
@@ -150,6 +130,8 @@ body {
       		<h1>Jolecule</h1>
 		</a>
     </div>
+    <!-- the div id is used to determine where the viewer goes in the page 
+    (see divTag variable) -->
     <div id="jolecule-embed"></div>
 	<script>
   require(['https://jolecule.com/js/jolecule.js'], function(jolecule) {
@@ -197,6 +179,9 @@ body {
     </div>
     <div>
 <!-- 
+ This didn't work: Molmil interferes with other viewers if it is embedded in this way.
+ It has to go into its own iframe.
+ 
     <span class="molmil_UI_container">
         <canvas id="molmilViewer" data-pdbid="1o5w" width="100%" height="100%" style="display: block; border: 1px solid #DDD;"></canvas>
     </span>
@@ -237,6 +222,7 @@ body {
       <h1>3Dmol.js</h1>
     </div>
 </a>
+<!-- Important: The div class name needs to be 'viewer_3Dmoljs' for this to work. -->
  <div class='viewer_3Dmoljs' data-pdb='1o5w' data-style='cartoon' data-select1='chain:A' data-style1='cartoon:color=spectrum' data-surface1='opacity:.7;color:white' ></div>
  See <a href="https://3dmol.csb.pitt.edu/doc/tutorial-embeddable.html">embedding tutorial</a>.
 </div>
