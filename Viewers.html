@@ -137,13 +137,13 @@ body {
   require(['https://jolecule.com/js/jolecule.js'], function(jolecule) {
     var widget = jolecule.initEmbedJolecule({
       divTag: '#jolecule-embed', // jquery Tag to your div element
-      animateState: 'none', // 'none', 'loop', 'rotate', 'rock'
+      animateState: 'loop', // 'none', 'loop', 'rotate', 'rock'
       isSequenceBar: true, // shows sequence bar in the header
       isGrid: true, // show docking grid panel
       isEditable: true, // show editable buttons at the footer
       isPlayable: true, // show playable option buttons at the footer
       backgroundColor: 0x000000, // background of 3D context
-      maxWaitStep: 50, // time to wait per view in looping mode
+      maxWaitStep: 150, // time to wait per view in looping mode
       isTextOverlay: true, // Show description text
       isToolbarOnTop: false,
       isToolbarOn: true,
